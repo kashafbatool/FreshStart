@@ -13,8 +13,7 @@ Protoype Summary
 We made the user interface using figma in order to be able to actually see our goal. Then, basic javascript was used for the chatbot. After some research on user intrefaces, we were also able to integrate the react library into our code. However, we both have no experience in using this library becasue of which its use was limited to the basic level only. Through futher research we were also able to identify areas of improvement in backend, databse, ai, data extraction and deployement. 
 
 Live URLs
-
-List any URLs relevant to demonstrating your prototype
+https://youtube.com/shorts/4cs90uB9zWc?feature=share
 
 Presentation
 https://docs.google.com/presentation/d/1XGhkkKSzRJGM2c4N_RyEVNE3gm-bN4XmBahvqg5dkc8/edit?usp=sharing
