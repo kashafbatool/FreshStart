@@ -17,10 +17,8 @@ Live URLs
 List any URLs relevant to demonstrating your prototype
 
 Presentation
-
-List any links to your presentation or any related visuals you want to share.
+https://docs.google.com/presentation/d/1XGhkkKSzRJGM2c4N_RyEVNE3gm-bN4XmBahvqg5dkc8/edit?usp=sharing
 
 Next Steps
-
 While we are satisified with our idea, we need to imporve greatly on the technical part of it because of whihc we will be trying to get more tudents on board who have a stronger coding experience. We are also self leanring as we go ahead and are hopeful that we will be able to improve on the technological flawas in the future ourselves as well. 
 
