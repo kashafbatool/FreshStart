@@ -1,0 +1,53 @@
+import {useState} from 'react';
+import {MessageSquare, Send, User, Bot} from 'lucide-react';
+import {Input} from '@/components/ui/input';
+import {Button}
+from '@/components/ui/button';
+
+export default function Chatbot() {
+    const[messages, setMessages] = useState([
+        {sender: 'bot', text: 'Welcome to FreshStart! How can I assist you today?'}
+    ]);
+    const[input, setInput] = useState('');
+
+    const sendMessage = () = > {
+        if (!input.trim()) return;
+        const newMessages = [...messages, {sender: 'user', text: input}];
+        setMessages(newMessages);
+        setInput('');
+
+        setTimeout(() => {
+            let response = '';
+            if (input.toLowerCase().includes('visa')) {
+                response = 'Check your visa type. Most students need an F-1 or J-1 visa. Schedule an interview and bring required documents.';
+            } else if (input.toLowerCase().includes('internship')) {
+                response = 'Look into internships and hackathons! They might delay for 2 months, so plan ahead.';
+            } else if (input.toLowerCase().includes('worried')) {
+                response = 'There are a number of things I can help you with. Select from: 1. Visa Process, 2. Legal Issues, 3. Banking, 4. Student Experiences, 5. Schedule an Interview.';
+            } else {
+                response = 'That sounds interesting! Could you elaborate?';
+            }
+            setMessages([...newMessages, {sender: 'bot', text: response}]);
+        }, 1000);
+    };
+
+    return (
+        <div className='flex flex-col w-full max-w-lg mx-auto border rounded-2xl shadow-lg p-4 bg-white' >
+            <div className='flex items-center text-xl font-bold mb-4' > < MessageSquare className='mr-2' / > FreshStart Chatbot < / div >
+            <div className='h-80 overflow-y-auto p-2 border rounded-lg' >
+                {messages.map((msg, index) = > (
+                    <div key={index} className={`flex my-2 ${msg.sender == = 'user' ? 'justify-end': 'justify-start'}`} >
+                        <div className={`flex items-center p-2 rounded-lg shadow ${msg.sender == = 'user' ? 'bg-blue-500 text-white': 'bg-gray-200'}`} >
+                            {msg.sender == = 'user' ? < User className='w-5 h-5 mr-2' / >: < Bot className='w-5 h-5 mr-2' / >}
+                            {msg.text}
+                        </div>
+                    </div>
+                ))}
+            </div>
+            < div className = 'flex mt-4' >
+                <Input className = 'flex-grow p-2 border rounded-lg' value = {input} onChange = {(e) = > setInput(e.target.value)} placeholder = 'Type your message...' />
+                <Button className = 'ml-2' onClick = {sendMessage} > < Send / > < / Button >
+            </div>
+        </div>
+    );
+}
